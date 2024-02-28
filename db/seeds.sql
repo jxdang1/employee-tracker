@@ -1,26 +1,22 @@
--- Names of department that will be inserted into department table
-INSERT INTO department
-  (name)
-VALUES
-  ('Engineering'),
-  ('Sales'),
-  ('Finance'),
-  ('Legal');
+INSERT INTO department (dept_name)
+VALUES ("Legal"),
+        ("IT"),
+        ("Sales"),
+        ("Human Resources"),
+        ("Executive"),
+        ("Accounting");
 
--- Roles of department that will be inserted into role table
-INSERT INTO role
-  (title, salary, department_id)
-VALUES
-  ('Software Engineer', 85000, 1),
-  ('Salesperson', 75000, 2),
-  ('Accountant', 125000, 3),
-  ('Lawyer', 200000, 4);
+INSERT INTO role (title, salary, department_id)
+VALUES ("President", "120000", "5"),
+        ("Accountant", "60000", "6"),
+        ("IT Manager", "70000", "2"),
+        ("Sales Rep", "50000", "3"),
+        ("HR Rep", "50000", "4"),
+        ("Sales Manager", "70000", "3");
 
--- Employee's first and last name that will be inserted into employee table
-INSERT INTO employee
-  (first_name, last_name, role_id, manager_id)
-VALUES
-  ('Sally', 'Jackson', 1, 4),
-  ('Percy', 'Jackson', 2, 3),
-  ('Annabeth', 'Chase', 3, 1),
-  ('Grover', 'Underwood', 4, 5);
+INSERT INTO employees (first_name, last_name, role_id, manager_id)
+VALUES ("Some", "Guy", "1", null),
+        ("Percy", "Jackson", "6", null),
+        ("Grover", "Underwood", "2", null),
+        ("Annabeth", "Chase", "4", "2"),
+        ("Sally", "Jackson", "5", null);
