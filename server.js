@@ -1,25 +1,30 @@
-const express = require('express');
+var inquirer = require('inquirer');
 const mysql = require('mysql2');
-const PORT = process.env.PORT || 3001;
-const app = express();
+
+//creates connection to MYSQL database
+const db = mysql.createConnection(
+    {
+      host: 'localhost',
+      // MySQL username,
+      user: 'root',
+      // MySQL password
+      password: 'root',
+      database: 'employees_db'
+    }
+  );
 
 // middleware
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
-// Connect to database
-const db = mysql.createConnection(
-  {
-    host: 'localhost',
-    // MySQL username,
-    user: 'root',
-    // MySQL password
-    password: '',
-    database: 'employees_db'
-  },
-  console.log(`Connected to the employees_db database.`)
-);
-
+const startMenu = {
+  type = 'list',
+  name: 'startMenu',
+  message: 'What would you like to do?',
+  choices: [
+    ''
+  ]
+}
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
